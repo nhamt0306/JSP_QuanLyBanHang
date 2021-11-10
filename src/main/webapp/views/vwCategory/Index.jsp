@@ -8,8 +8,12 @@
 <t:main>
   <jsp:body>
     <div class="card">
-      <h4 class="card-header">
+      <h4 class="card-header d-flex justify-content-between">
         Categories
+        <a href="${pageContext.request.contextPath}/Admin/Category/Add" class="btn btn-outline-success" role="button">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+          Add Category
+        </a>
       </h4>
       <c:choose>
         <c:when test="${categories.size() == 0}">
