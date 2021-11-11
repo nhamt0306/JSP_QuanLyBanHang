@@ -29,4 +29,43 @@ public class CategoryModel {
               .executeUpdate();
     }
   }
+
+  public static Category getCategoryByID (int id) {
+    Sql2o sql2o = new Sql2o("jdbc:mysql://localhost:3306/quanlybanhang", "root", "");
+    try (Connection con = sql2o.open()) {
+      final String query = "select * from categories where CatID = :catid";
+      List<Category> listCat= con.createQuery(query) //addParameter để mapping giữa query với tham số
+              .addParameter("catid", id) /*Tham số thứ nhất của query, tham số truyền vào*/
+              .executeAndFetch(Category.class);
+      if (listCat.size() == 0)
+      {
+        return null;
+      }
+      else
+        return listCat.get(0);
+    }
+  }
+  public static void updateCategory(Category c) {
+    Sql2o sql2o = new Sql2o("jdbc:mysql://localhost:3306/quanlybanhang", "root", "");
+
+    String updateSql = "update categories set CatName = :catname where CatID = :catid";
+
+    try (Connection con = sql2o.open()) {
+      con.createQuery(updateSql)
+              .addParameter("catname", c.getCatName())
+              .addParameter("catid", c.getCatID())
+              .executeUpdate();
+    }
+  }
+  public static void delete(int catid) {
+    Sql2o sql2o = new Sql2o("jdbc:mysql://localhost:3306/quanlybanhang", "root", "");
+
+    String SQL = "delete from categories where CatID = :catid";
+
+    try (Connection con = sql2o.open()) {
+      con.createQuery(SQL)
+              .addParameter("catid", catid)
+              .executeUpdate();
+    }
+  }
 }

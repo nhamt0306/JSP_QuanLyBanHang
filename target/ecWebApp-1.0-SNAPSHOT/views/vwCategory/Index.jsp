@@ -37,7 +37,7 @@
                     <td>${c.catID}</td>
                     <td>${c.catName}</td>
                     <td class="text-right">
-                      <a class="btn btn-sm btn-outline-primary" href="#" role="button">
+                      <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Admin/Category/Edit?id=${c.catID}" role="button">
                         <i class="fa fa-pencil" aria-hidden="true"></i>
                       </a>
                     </td>

@@ -32,6 +32,19 @@ public class AdminCategoryServlet extends HttpServlet {
       case "/Add":
         ServletUtils.forward("/views/vwCategory/Add.jsp", request, response);
         break;
+      case "/Edit":
+        int id = Integer.parseInt(request.getParameter("id"));
+        Category c = CategoryModel.getCategoryByID(id);
+        if (c!= null)
+        {
+          request.setAttribute("category", c);
+          ServletUtils.forward("/views/vwCategory/Edit.jsp", request, response);
+        }
+        else {
+          ServletUtils.redirect("/Admin/Category", request, response);
+        }
+        break;
+
       default:
         ServletUtils.forward("/views/404.jsp", request, response);
         break;
@@ -44,14 +57,41 @@ public class AdminCategoryServlet extends HttpServlet {
 
     switch (path) {
       case "/Add":
-        String name = request.getParameter("CatName");
-        Category c = new Category(10,name);
-        CategoryModel.add(c);
-        ServletUtils.forward("/views/vwCategory/Add.jsp", request, response);
+        addCategory(request, response);
         break;
+
+      case "/Delete":
+        deleteCategory(request, response);
+        break;
+
+      case "/Update":
+        updateCategory(request, response);
+        break;
+
       default:
         ServletUtils.forward("/views/404.jsp", request, response);
         break;
     }
+  }
+
+  private void addCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String name = request.getParameter("CatName");
+    Category c = new Category(10,name);
+    CategoryModel.add(c);
+    ServletUtils.forward("/views/vwCategory/Add.jsp", request, response);
+  }
+
+  private void updateCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    int id = Integer.parseInt(request.getParameter("CatID"));
+    String name = request.getParameter("CatName"); //Name trong thẻ input của form Edit.jsp
+    Category c = new Category(id,name);
+    CategoryModel.updateCategory(c);
+    ServletUtils.redirect("/Admin/Category", request, response);
+  }
+
+  private void deleteCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    int id = Integer.parseInt(request.getParameter("CatID"));
+    CategoryModel.delete(id);
+    ServletUtils.redirect("/Admin/Category", request, response);
   }
 }
