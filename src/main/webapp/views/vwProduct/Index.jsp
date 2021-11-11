@@ -47,7 +47,7 @@
                     <td>${p.catID}</td>
                     <td>${p.quantity}</td>
                     <td class="text-right">
-                      <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Admin/Product/Edit?id=${p.catID}" role="button">
+                      <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Admin/Product/Edit?id=${p.proID}" role="button">
                         <i class="fa fa-pencil" aria-hidden="true"></i>
                       </a>
                     </td>

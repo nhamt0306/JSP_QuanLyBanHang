@@ -41,8 +41,8 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="${pageContext.request.contextPath}/Admin/ProName" class="btn btn-primary" role="button">
-                        Back to Category List
+                    <a href="${pageContext.request.contextPath}/Admin/Product" class="btn btn-primary" role="button">
+                        Product List
                     </a>
                     <button type="submit" class="btn btn-outline-success">Save</button>
                 </div>

@@ -83,7 +83,7 @@ public class AdminProductServlet extends HttpServlet {
     int quantity = Integer.parseInt(request.getParameter("Quantity"));
     Product p = new Product(id,name, tiny, full, price, catid, quantity);
     ProductModel.add(p);
-    ServletUtils.forward("/views/vwCategory/Add.jsp", request, response);
+    ServletUtils.forward("/views/vwProduct/Add.jsp", request, response);
   }
 
   private void updateProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
