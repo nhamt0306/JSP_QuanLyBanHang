@@ -3,8 +3,9 @@
     Featured
   </h4>
   <div class="list-group list-group-flush">
+    <a href="${pageContext.request.contextPath}/Admin/Category" class="list-group-item list-group-item-action">Category</a>
     <a href="${pageContext.request.contextPath}/Admin/Product" class="list-group-item list-group-item-action">Product</a>
-    <a href="#" class="list-group-item list-group-item-action">User</a>
+    
     <a href="#" class="list-group-item list-group-item-action " tabindex="-1" aria-disabled="true">Order Detail</a>
   </div>
 </div>
