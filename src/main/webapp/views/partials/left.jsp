@@ -10,7 +10,7 @@
   </div>
 </div>
 
-<div class="card mt-30">
+<div class="card mt-3">
 <%--  <h4 class="card-header">--%>
 <%--    Featured--%>
 <%--  </h4>--%>
