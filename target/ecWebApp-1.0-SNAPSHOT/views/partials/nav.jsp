@@ -1,37 +1,40 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
-  <a class="navbar-brand" href="#">
-    <i class="fa fa-home fa-2x" aria-hidden="true"></i>
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/styles.css">
+<!--HEADER-->
+<div class="header row" style="height: 85px">
+  <div class="col l-3 header_left">
+    <img src="${pageContext.request.contextPath}/public/img/pictures/logo_center.png" alt="" class="header_left-logo">
   </div>
-</nav>
+  <div class="col l-6 header_center">
+    <ul class="header_navbar_list">
+      <li><a href="${pageContext.request.contextPath}/Home" class="header_navbar-item header_navbar-home" style="font-size: 18px">TRANG CHỦ</a></li>
+      <li>
+        <a class="header_navbar-item header_navbar-new" style="font-size: 18px">SẢN PHẨM</a>
+        <ul class="header_subnav">
+          <li>
+            <a href="${pageContext.request.contextPath}/Product/All" class="header_subnav-item">Tất cả sản phẩm</a>
+          </li>
+          <li>
+            <a href="${pageContext.request.contextPath}/Product/Ao" class="header_subnav-item">Áo Nam/Nữ</a>
+          </li>
+          <li><a href="${pageContext.request.contextPath}/Product/Quan" class="header_subnav-item">Quần Nam/Nữ</a></li>
+<%--          <li><a href="" class="header_subnav-item">Phụ Kiện Nam/Nữ</a></li>--%>
+        </ul>
+      </li>
+      <li><a href="${pageContext.request.contextPath}/Home/Policy" class="header_navbar-item header_navbar-policy" style="font-size: 18px">CHÍNH SÁCH</a></li>
+<%--      <li><a class="header_navbar-item header_navbar-sale" style="font-size: 18px">SALE OFF</a></li>--%>
+      <li><a href="${pageContext.request.contextPath}/Home/Contact" class="header_navbar-item header_navbar-contact" style="font-size: 18px">LIÊN HỆ</a></li>
+    </ul>
+  </div>
+  <div class="col l-3 header_right">
+    <div>
+      <input class="header_right_input-find" type="text" name="keyfind" placeholder="Nhập từ khóa" style="background-color: rgba(0,0,0,0.4); color: white; width: 164px">
+      <a href=""><i class="header_btn fas fa-search"></i></a>
+    </div>
+    <a href="${pageContext.request.contextPath}/Cart"><i class="header_btn fas fa-shopping-cart"></i></a>
+    <div>
+      <a href="${pageContext.request.contextPath}/Registration/Login"><i class="header_btn fas fa-user-circle"></i></a>
+      <h5 style="text-align: center">${username}</h5>
+    </div>
+  </div>
+</div>

@@ -1,53 +1,71 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/management.css">
 
 <t:main>
     <jsp:body>
-        <form action="" method="post">
-            <div class="card">
-                <h4 class="card-header">
-                    New Product
-                </h4>
-                <div class="card-body">
-                    <div class="form-group">
-                        <label for="ProID">#</label>
-                        <input type="text" name="ProID" class="form-control" id="ProID" placeholder="Enter ID" autofocus>
+        <div class="header" style="background-color: gray">
+            <ul class="navbar_list">
+                <li class="navbar_item"><a href="${pageContext.request.contextPath}/Admin/Product">HÀNG HÓA</a></li>
+                <li class="navbar_item"><a href="">NHÂN VIÊN</a></li>
+                <li class="navbar_item"><a href="">ACCOUNT</a></li>
+            </ul>
+        </div>
+        <div class="main" >
+            <div class="form" id="frmProduct" style="margin-top: 80px;width: 100%">
+                <form action="" class="form_accounts" method="post" style="width: 100%">
+                    <h2>Quản Lý Hàng Hóa</h2>
+                    <div class="input-form">
+                        <span>Mã Sản Phẩm</span>
+                        <input type="text" name="masp"  style="width: 102%">
                     </div>
-                    <div class="form-group">
-                        <label for="ProName">Product</label>
-                        <input type="text" name="ProName" class="form-control" id="ProName" placeholder="Enter name">
+                    <div class="input-form">
+                        <span>Tên Sản Phẩm</span>
+                        <input type="text" name="tensp" style="width: 102%">
                     </div>
-                    <div class="form-group">
-                        <label for="TinyDes">TinyDes</label>
-                        <input type="text" name="TinyDes" class="form-control" id="TinyDes" placeholder="Enter name">
+                    <div class="input-form">
+                        <span>Loại Sản Phẩm</span>
+                        <input type="text" name="loaisp" style="width: 102%">
                     </div>
-                    <div class="form-group">
-                        <label for="FullDes">FullDes</label>
-                        <input type="text" name="FullDes" class="form-control" id="FullDes" placeholder="Enter name">
+                    <div class="input-form">
+                        <span>Màu Sắc</span>
+                        <input type="text" name="mausac" style="width: 102%">
                     </div>
-                    <div class="form-group">
-                        <label for="Price">Price</label>
-                        <input type="text" name="Price" class="form-control" id="Price" placeholder="Enter name">
+                    <div class="input-form">
+                        <span>Chất liệu</span>
+                        <input type="text" name="chatlieu" style="width: 102%">
                     </div>
-                    <div class="form-group">
-                        <label for="CatID">Cat ID</label>
-                        <input type="text" name="CatID" class="form-control" id="CatID" placeholder="Enter name">
+                    <div class="input-form">
+                        <span>Size</span>
+                        <input type="text" name="size" style="width: 102%">
                     </div>
-                    <div class="form-group">
-                        <label for="Quantity">Quantity</label>
-                        <input type="text" name="Quantity" class="form-control" id="Quantity" placeholder="Enter name">
+                    <div class="input-form">
+                        <span>Số Lượng</span>
+                        <input type="text" name="soluong" style="width: 102%">
                     </div>
-                </div>
-                <div class="card-footer">
-                    <a href="${pageContext.request.contextPath}/Admin/Product" class="btn btn-primary" role="button">
-                        Product List
-                    </a>
-                    <button type="submit" class="btn btn-outline-success">Save</button>
-                </div>
-
+                    <div class="input-form">
+                        <span>Giá Nhập</span>
+                        <input type="text" name="giamua" style="width: 102%">
+                    </div>
+                    <div class="input-form">
+                        <span>Giá Bán</span>
+                        <input type="text" name="giaban" style="width: 102%">
+                    </div>
+                    <div class="input-form">
+                        <span>Chỉ mục ảnh</span>
+                        <input type="text" name="indeximg" style="width: 102%">
+                    </div>
+                    <div class="input-form">
+                        <button type="submit" class="btn btn-outline-success" style="padding: 5px 40px; font-size: 25px; font-weight: bold">
+                            Thêm sản phẩm
+                        </button>
+                        <a href="${pageContext.request.contextPath}/Admin/Product" class="btn btn-primary" role="button" style="padding: 5px 40px; font-size: 25px; font-weight: bold">
+                            Danh sách sản phẩm
+                        </a>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </jsp:body>
 </t:main>

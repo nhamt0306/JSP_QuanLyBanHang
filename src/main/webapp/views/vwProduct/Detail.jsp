@@ -1,60 +1,73 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/product_detail.css">
 
 <jsp:useBean id="product" scope="request" type="com.ute.ecwebapp.beans.Product"/>
 
 <t:main>
     <jsp:body>
-        <form action="" method="post">
-            <div class="card">
-                <h4 class="card-header">
-                    New Category
-                </h4>
-                <div class="card-body">
-                    <div class="form-group">
-                        <label for="ProID">#</label>
-                        <input type="text" name="ProID" class="form-control" id="ProID" value="${product.proID}" readonly>
+        <div class="main grid wide">
+            <div class="row">
+                <div class="col l-5">
+                    <div class="row" style="margin-top: 120px">
+                        <img class="pant_product" src="${pageContext.request.contextPath}/public/img/${product.loaiSP}/${product.indeximg}/${product.loaiSP}${product.indeximg}.jpg" style="margin-top: -90px">
                     </div>
-                    <div class="form-group">
-                        <label for="ProName">Product</label>
-                        <input type="text" name="ProName" class="form-control" id="ProName" value="${product.proName}" autofocus>
-                    </div>
-                    <div class="form-group">
-                        <label for="TinyDes">TinyDes</label>
-                        <input type="text" name="TinyDes" class="form-control" id="TinyDes" value="${product.tinyDes}">
-                    </div>
-                    <div class="form-group">
-                        <label for="FullDes">FullDes</label>
-                        <input type="text" name="FullDes" class="form-control" id="FullDes" value="${product.fullDes}">
-                    </div>
-                    <div class="form-group">
-                        <label for="Price">Price</label>
-                        <input type="text" name="Price" class="form-control" id="Price" value="${product.price}">
-                    </div>
-                    <div class="form-group">
-                        <label for="CatID">Cat ID</label>
-                        <input type="text" name="CatID" class="form-control" id="CatID" value="${product.catID}">
-                    </div>
-                    <div class="form-group">
-                        <label for="Quantity">Quantity</label>
-                        <input type="text" name="Quantity" class="form-control" id="Quantity" value="${product.quantity}">
-                    </div>
+<%--                    <div class="row pant_footer" style="margin-bottom: 80px">--%>
+<%--                        <div class="col l-3">--%>
+<%--                            <img class="pant_more" src="${pageContext.request.contextPath}/public/img/pants/pant1.jpg" alt="">--%>
+<%--                        </div>--%>
+<%--                        <div class="col l-3">--%>
+<%--                            <img class="pant_more" src="${pageContext.request.contextPath}/public/img/pants/pant2.jpg" alt="">--%>
+<%--                        </div>--%>
+<%--                        <div class="col l-3">--%>
+<%--                            <img class="pant_more" src="${pageContext.request.contextPath}/public/img/pants/pant3.jpg" alt="">--%>
+<%--                        </div>--%>
+<%--                        <div class="col l-3">--%>
+<%--                            <img class="pant_more" src="${pageContext.request.contextPath}/public/img/pants/pant2.jpg" alt="">--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
                 </div>
+                <div class="col l-7 pant_right" style="margin-top: 120px">
+                    <h3 class="pant_title">${product.tenSP}</h3>
+                    <p class="pant_price">
+                        <span class="price_old">
+                            <strong>
+                                <fmt:formatNumber value="${product.dongiaBan}" type="number"/>
+                            </strong>
+                        </span>
+                        <span class="price_new">
+                            <strong>
+                                <fmt:formatNumber value="${product.dongiaNhap}" type="number"/>
+                            </strong>
+                        </span>
+                    </p>
+                    <h5>Kích thước:</h5>
+                    <select name="" id="pant_size_option">
+                        <option value="size">${product.sizeSP}</option>
+                    </select>
 
-                <div class="card-footer">
-                    <a href="${pageContext.request.contextPath}/Admin/Product" class="btn btn-primary" role="button">
-                        Product List
+                    <h5>Màu sắc:</h5>
+                    <select name="" id="pant_color_option">
+                        <option value="color">${product.mauSP}</option>
+                    </select>
+                    <h5>Số lượng còn lại: ${product.soLuong}</h5>
+                    <h5>Mô tả:</h5>
+                    <p class="pant_desc">
+                        ${product.tenSP} <br>
+                        MÀU SẮC: ${product.mauSP} <br>
+                        BẢNG SIZE: <br>
+                        <img src="${pageContext.request.contextPath}/public/img/pictures/size_chart.jpg" alt="" width="60%">
+                    </p>
+<%--                    <button role="button" value="Thêm vào giỏ hàng" class="pant_add_cart" style="margin-top: -28px">--%>
+<%--                        Thêm vào giỏ hàng--%>
+<%--                    </button>--%>
+                    <a role="button" href="${pageContext.request.contextPath}/Cart/Add?id=${product.maSP}" class="pant_add_cart" style="margin-top: -28px">
+                        Thêm vào giỏ hàng
                     </a>
-                    <button type="submit" class="btn btn-outline-success" formaction="${pageContext.request.contextPath}/Admin/Product/Update">
-                        Save
-                    </button>
-                    <button type="submit" class="btn btn-danger" formaction="${pageContext.request.contextPath}/Admin/Product/Delete">
-                        Delete
-                    </button>
                 </div>
-
             </div>
-        </form>
+        </div>
     </jsp:body>
 </t:main>
