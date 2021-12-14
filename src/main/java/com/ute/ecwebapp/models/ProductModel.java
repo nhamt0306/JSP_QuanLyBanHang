@@ -82,14 +82,14 @@ public class ProductModel {
               .executeUpdate();
     }
   }
-  public static void delete(int id) {
+  public static void delete(int manv) {
     Sql2o sql2o = new Sql2o("jdbc:mysql://localhost:3306/webclothing", "root", "");
 
-    String SQL = "delete from tblsanpham where maSP = :maSP";
+    String SQL = "delete from tblnhanvien where maNhanvien = :manv";
 
     try (Connection con = sql2o.open()) {
       con.createQuery(SQL)
-              .addParameter("maSP", id)
+              .addParameter("manv", manv)
               .executeUpdate();
     }
   }

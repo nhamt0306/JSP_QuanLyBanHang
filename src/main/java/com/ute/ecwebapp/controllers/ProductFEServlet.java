@@ -28,6 +28,16 @@ public class ProductFEServlet extends HttpServlet {
             case "/All":
                 List<Product> list = ProductModel.findAll();
                 request.setAttribute("products", list);
+                List<Product> listp = ProductModel.findByCat("pants");
+                request.setAttribute("pants", listp);
+                List<Product> lists = ProductModel.findByCat("shirt");
+                request.setAttribute("shirt", lists);
+                List<Product> listj = ProductModel.findByCat("jacket");
+                request.setAttribute("jacket", listj);
+                List<Product> listb = ProductModel.findByCat("bags");
+                request.setAttribute("bags", listb);
+                List<Product> listss = ProductModel.findByCat("shorts");
+                request.setAttribute("shorts", listss);
                 ServletUtils.forward("/views/vwProduct/All.jsp", request, response);
                 break;
             case "/Quan":
@@ -39,6 +49,21 @@ public class ProductFEServlet extends HttpServlet {
                 List<Product> list3 = ProductModel.findByCat("shirt");
                 request.setAttribute("products", list3);
                 ServletUtils.forward("/views/vwProduct/Ao.jsp", request, response);
+                break;
+            case "/Aokhoac":
+                List<Product> list4 = ProductModel.findByCat("jacket");
+                request.setAttribute("products", list4);
+                ServletUtils.forward("/views/vwProduct/Aokhoac.jsp", request, response);
+                break;
+            case "/Balo":
+                List<Product> list5 = ProductModel.findByCat("bags");
+                request.setAttribute("products", list5);
+                ServletUtils.forward("/views/vwProduct/Balo.jsp", request, response);
+                break;
+            case "/Quandui":
+                List<Product> list6 = ProductModel.findByCat("shorts");
+                request.setAttribute("products", list6);
+                ServletUtils.forward("/views/vwProduct/Quandui.jsp", request, response);
                 break;
             default:
                 ServletUtils.forward("/views/404.jsp", request, response);

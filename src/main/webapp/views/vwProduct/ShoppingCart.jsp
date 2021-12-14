@@ -72,7 +72,8 @@
                                                 </div>
                                             </td>
                                             <td data-th="Price">${p.price}đ</td>
-                                            <td data-th="Quantity"><input class="form-control text-center" value="${p.quantity}" type="number">
+                                            <td data-th="Quantity">
+                                                <input class="form-control text-center" value="${p.quantity}" type="number">
                                             </td>
                                             <td data-th="Subtotal" class="text-center">${p.price*p.quantity}đ</td>
                                             <td class="actions" data-th="">
@@ -121,10 +122,8 @@
                         <label >Thành tiền:
                             <span>
                                     <fmt:formatNumber value="${sessionScope.totalprice}" type="number"/>đ
-                            </span>
-                        </label>
+                            </span></label>
                         <label >Phương thức thanh toán: <span>Tiền mặt</span></label>
-                        <label >Khách hàng: <span>Thanh Nhã</span></label>
                         <label >Địa chỉ giao hàng: <span>TP HCM</span></label>
                         <input type="button" value="Thanh toán" class="pay-btn" id="thanhtoan">
                     </div>

@@ -1,18 +1,15 @@
 package com.ute.ecwebapp.beans;
 
 public class Account {
-    String accID;
-    String accPASS;
-    String email;
+    private String accID;
+    private String accPASS;
+    private String email;
 
 
     public Account(String accID, String accPASS, String email) {
         this.accID = accID;
         this.accPASS = accPASS;
         this.email = email;
-    }
-
-    public Account() {
     }
 
     public String getAccID() {

@@ -4,7 +4,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <jsp:useBean id="products" scope="request" type="java.util.List<com.ute.ecwebapp.beans.Product>"/>
-
+<jsp:useBean id="pants" scope="request" type="java.util.List<com.ute.ecwebapp.beans.Product>"/>
+<jsp:useBean id="shirt" scope="request" type="java.util.List<com.ute.ecwebapp.beans.Product>"/>
+<jsp:useBean id="jacket" scope="request" type="java.util.List<com.ute.ecwebapp.beans.Product>"/>
+<jsp:useBean id="bags" scope="request" type="java.util.List<com.ute.ecwebapp.beans.Product>"/>
+<jsp:useBean id="shorts" scope="request" type="java.util.List<com.ute.ecwebapp.beans.Product>"/>
 <t:main>
   <jsp:body>
     <!--SLIDER - BOOTSTRAP-->
@@ -39,8 +43,125 @@
 <%--        <a href="#" id="content_quan">--%>
 <%--          <div class="row content_title">QUẦN:</div>--%>
 <%--        </a>--%>
+        <h3>Pants</h3>
         <div class="row content_pants">
-          <c:forEach items="${products}" var="p">
+          <c:forEach items="${pants}" var="p">
+            <div class="col l-3 card_category">
+              <img class="content_item content_pant-img" src="${pageContext.request.contextPath}/public/img/${p.loaiSP}/${p.indeximg}/${p.loaiSP}${p.indeximg}.jpg" alt="">
+
+              <a class="content_item content_pant-name" href="${pageContext.request.contextPath}/Product/Detail?id=${p.maSP}">
+                <h5>${p.tenSP}</h5>
+              </a>
+              <p class="content_item content_pant-price">
+                <span class="price_old">
+                  <strong>
+                    <fmt:formatNumber value="${p.dongiaBan}" type="number"/>
+                  </strong>
+                </span>
+                <span class="price_new">
+                  <strong>
+                    <fmt:formatNumber value="${p.dongiaNhap}" type="number"/>
+                  </strong>
+                </span>
+              </p>
+            </div>
+          </c:forEach>
+        </div>
+      </div>
+      <div class="row content_products">
+          <%--        <a href="#" id="content_quan">--%>
+          <%--          <div class="row content_title">QUẦN:</div>--%>
+          <%--        </a>--%>
+        <h3>Shirt</h3>
+        <div class="row content_pants">
+          <c:forEach items="${shirt}" var="p">
+            <div class="col l-3 card_category">
+              <img class="content_item content_pant-img" src="${pageContext.request.contextPath}/public/img/${p.loaiSP}/${p.indeximg}/${p.loaiSP}${p.indeximg}.jpg" alt="">
+
+              <a class="content_item content_pant-name" href="${pageContext.request.contextPath}/Product/Detail?id=${p.maSP}">
+                <h5>${p.tenSP}</h5>
+              </a>
+              <p class="content_item content_pant-price">
+                <span class="price_old">
+                  <strong>
+                    <fmt:formatNumber value="${p.dongiaBan}" type="number"/>
+                  </strong>
+                </span>
+                <span class="price_new">
+                  <strong>
+                    <fmt:formatNumber value="${p.dongiaNhap}" type="number"/>
+                  </strong>
+                </span>
+              </p>
+            </div>
+          </c:forEach>
+        </div>
+      </div>
+      <div class="row content_products">
+          <%--        <a href="#" id="content_quan">--%>
+          <%--          <div class="row content_title">QUẦN:</div>--%>
+          <%--        </a>--%>
+        <h3>Jacket</h3>
+        <div class="row content_pants">
+          <c:forEach items="${jacket}" var="p">
+            <div class="col l-3 card_category">
+              <img class="content_item content_pant-img" src="${pageContext.request.contextPath}/public/img/${p.loaiSP}/${p.indeximg}/${p.loaiSP}${p.indeximg}.jpg" alt="">
+
+              <a class="content_item content_pant-name" href="${pageContext.request.contextPath}/Product/Detail?id=${p.maSP}">
+                <h5>${p.tenSP}</h5>
+              </a>
+              <p class="content_item content_pant-price">
+                <span class="price_old">
+                  <strong>
+                    <fmt:formatNumber value="${p.dongiaBan}" type="number"/>
+                  </strong>
+                </span>
+                <span class="price_new">
+                  <strong>
+                    <fmt:formatNumber value="${p.dongiaNhap}" type="number"/>
+                  </strong>
+                </span>
+              </p>
+            </div>
+          </c:forEach>
+        </div>
+      </div>
+      <div class="row content_products">
+          <%--        <a href="#" id="content_quan">--%>
+          <%--          <div class="row content_title">QUẦN:</div>--%>
+          <%--        </a>--%>
+        <h3>Bags</h3>
+        <div class="row content_pants">
+          <c:forEach items="${bags}" var="p">
+            <div class="col l-3 card_category">
+              <img class="content_item content_pant-img" src="${pageContext.request.contextPath}/public/img/${p.loaiSP}/${p.indeximg}/${p.loaiSP}${p.indeximg}.jpg" alt="">
+
+              <a class="content_item content_pant-name" href="${pageContext.request.contextPath}/Product/Detail?id=${p.maSP}">
+                <h5>${p.tenSP}</h5>
+              </a>
+              <p class="content_item content_pant-price">
+                <span class="price_old">
+                  <strong>
+                    <fmt:formatNumber value="${p.dongiaBan}" type="number"/>
+                  </strong>
+                </span>
+                <span class="price_new">
+                  <strong>
+                    <fmt:formatNumber value="${p.dongiaNhap}" type="number"/>
+                  </strong>
+                </span>
+              </p>
+            </div>
+          </c:forEach>
+        </div>
+      </div>
+      <div class="row content_products">
+          <%--        <a href="#" id="content_quan">--%>
+          <%--          <div class="row content_title">QUẦN:</div>--%>
+          <%--        </a>--%>
+        <h3>Shorts</h3>
+        <div class="row content_pants">
+          <c:forEach items="${shorts}" var="p">
             <div class="col l-3 card_category">
               <img class="content_item content_pant-img" src="${pageContext.request.contextPath}/public/img/${p.loaiSP}/${p.indeximg}/${p.loaiSP}${p.indeximg}.jpg" alt="">
 

@@ -9,9 +9,10 @@
     <jsp:body>
         <div class="header" style="background-color: gray">
             <ul class="navbar_list">
-                <li class="navbar_item"><a href="">HÀNG HÓA</a></li>
-                <li class="navbar_item"><a href="">NHÂN VIÊN</a></li>
-                <li class="navbar_item"><a href="">ACCOUNT</a></li>
+                <li class="navbar_item"><a href="${pageContext.request.contextPath}/Admin/Product/Index">HÀNG HÓA</a></li>
+                <li class="navbar_item"><a href="${pageContext.request.contextPath}/Admin/Staff/Index">NHÂN VIÊN</a></li>
+                <li class="navbar_item"><a href="${pageContext.request.contextPath}/Admin/Order/Index">ĐƠN HÀNG</a></li>
+                <li class="navbar_item"><a href="${pageContext.request.contextPath}/Admin/Account/Index">ACCOUNT</a></li>
             </ul>
         </div>
         <div class="main" >
