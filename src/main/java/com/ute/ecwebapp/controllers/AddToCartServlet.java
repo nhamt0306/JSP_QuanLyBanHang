@@ -1,2 +1,4 @@
-package com.ute.ecwebapp.controllers;public class AddToCartServlet {
+package com.ute.ecwebapp.controllers;
+
+public class AddToCartServlet {
 }
