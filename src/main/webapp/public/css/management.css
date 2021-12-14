@@ -1,0 +1,109 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar_list {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+}
+
+.navbar_item {
+    background-color: gainsboro;
+    padding: 10px 50px;
+    margin: 0 20px;
+    font-weight: bold;
+}
+
+.navbar_item a:hover {
+    color: black;
+    opacity: 0.8;
+}
+
+.navbar_item a {
+    font-size: 22px;
+    color: #607d8b;
+}
+
+.main {
+    display: flex;
+}
+.form {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form h2{ /*Đăng nhập/Đăng ký*/
+    color: #607d8b;
+    font-weight: 500;
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #ff4584;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+.form_accounts {
+    border: 1px solid #ccc;
+    padding: 20px 100px 30px 50px;
+    margin: 30px;
+}
+
+.input-form {
+    margin: 10px 0;
+}
+
+.input-form span{ /*Thẻ tile trước input*/
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #607d8b;
+    letter-spacing: 1px;
+}
+
+.input-form input{ /*Ô input chung*/
+    width: 110%;
+    padding: 8px 20px;
+    outline: none;
+    border: 1px solid #607d8b;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #607d8b;
+    background: transparent;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+.input-form input[type="submit"]{ /*Nút Lưu*/
+    width: 200px;
+    float: right;
+    margin-right: -35px;
+    background: #ff4584;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.12),
+                0 2px 2px rgba(0,0,0,0.12),
+                0 4px 4px rgba(0,0,0,0.12),
+                0 8px 8px rgba(0,0,0,0.12),
+                0 16px 16px rgba(0,0,0,0.12);
+}
+
+.input-form input[type="submit"]:hover{
+    background: #f53677;
+}
+
+.table {
+    border: 1px solid #ccc;
+    margin: 30px 20px 30px 10px;
+    width: 98%;
+}
