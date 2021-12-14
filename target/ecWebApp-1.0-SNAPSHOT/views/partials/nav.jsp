@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/styles.css">
 <!--HEADER-->
 <div class="header row" style="height: 85px">
@@ -43,7 +45,17 @@
       <input class="header_right_input-find" type="text" name="keyfind" placeholder="Nhập từ khóa" style="background-color: rgba(0,0,0,0.4); color: white; width: 164px">
       <a href=""><i class="header_btn fas fa-search"></i></a>
     </div>
-    <a href="${pageContext.request.contextPath}/Cart"><i class="header_btn fas fa-shopping-cart"></i></a>
+    <c:set var="names" value="${sessionScope.order}"/>
+    <c:forEach items="${order.items}" var="p">
+      <c:set var="temp" value="0"></c:set>
+      <c:set var="totalquantity" value="temp+${p.quantity}"></c:set>
+    </c:forEach>
+    <div id="cart" style="margin-top: 30px;">
+      <a href="${pageContext.request.contextPath}/Cart">
+        <i class="fa" style="font-size:24px; color: #cccccc;">&#xf07a;</i>
+        <span class='badge badge-warning' id='lblCartCount'> ${p.totalquantity} </span>
+      </a>
+    </div>
     <div>
       <a href="${pageContext.request.contextPath}/Registration/Login"><i class="header_btn fas fa-user-circle"></i></a>
       <h5 style="text-align: center">${username}</h5>
