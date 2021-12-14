@@ -45,15 +45,14 @@
       <input class="header_right_input-find" type="text" name="keyfind" placeholder="Nhập từ khóa" style="background-color: rgba(0,0,0,0.4); color: white; width: 164px">
       <a href=""><i class="header_btn fas fa-search"></i></a>
     </div>
-    <c:set var="names" value="${sessionScope.order}"/>
-    <c:forEach items="${order.items}" var="p">
-      <c:set var="temp" value="0"></c:set>
-      <c:set var="totalquantity" value="temp+${p.quantity}"></c:set>
+    <c:set var="total" value="${0}"/>
+    <c:forEach var="p" items="${order.items}">
+      <c:set var="total" value="${total + p.quantity}" />
     </c:forEach>
     <div id="cart" style="margin-top: 30px;">
       <a href="${pageContext.request.contextPath}/Cart">
         <i class="fa" style="font-size:24px; color: #cccccc;">&#xf07a;</i>
-        <span class='badge badge-warning' id='lblCartCount'> ${p.totalquantity} </span>
+        <span class='badge badge-warning' id='lblCartCount'> ${total} </span>
       </a>
     </div>
     <div>
