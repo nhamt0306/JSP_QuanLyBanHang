@@ -4,7 +4,6 @@ import com.ute.ecwebapp.beans.Account;
 import com.ute.ecwebapp.beans.Item;
 import com.ute.ecwebapp.beans.Order;
 import com.ute.ecwebapp.beans.Product;
-import com.ute.ecwebapp.models.CartModel;
 import com.ute.ecwebapp.models.LoginControlModel;
 import com.ute.ecwebapp.models.ProductModel;
 import com.ute.ecwebapp.utils.ServletUtils;

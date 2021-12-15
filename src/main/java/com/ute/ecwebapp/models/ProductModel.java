@@ -26,6 +26,15 @@ public class ProductModel {
     }
   }
 
+  public static List<Product> findByName(String tensp) {
+    Sql2o sql2o = new Sql2o("jdbc:mysql://localhost:3306/webclothing","root","");
+    final String query = "select * from tblsanpham where tenSP like :tensp";
+    try (Connection con = sql2o.open()) {
+      return con.createQuery(query)
+              .addParameter("tensp", "%"+tensp+"%")
+              .executeAndFetch(Product.class);
+    }
+  }
 
   public static void add(Product p) {
     Sql2o sql2o = new Sql2o("jdbc:mysql://localhost:3306/webclothing", "root", "");

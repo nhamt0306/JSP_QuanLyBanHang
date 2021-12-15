@@ -25,6 +25,12 @@ public class ProductFEServlet extends HttpServlet {
                 request.setAttribute("product", p);
                 ServletUtils.forward("/views/vwProduct/Detail.jsp", request, response);
                 break;
+            case "/Search":
+                String key = request.getParameter("keyfind");
+                List<Product> listf = ProductModel.findByName(key);
+                request.setAttribute("products", listf);
+                ServletUtils.forward("/views/vwProduct/Search.jsp", request, response);
+                break;
             case "/All":
                 List<Product> list = ProductModel.findAll();
                 request.setAttribute("products", list);

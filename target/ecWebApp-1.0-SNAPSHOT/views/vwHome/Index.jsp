@@ -43,7 +43,7 @@
 <%--        <a href="#" id="content_quan">--%>
 <%--          <div class="row content_title">QUẦN:</div>--%>
 <%--        </a>--%>
-        <h3>Pants</h3>
+        <h3>Quần Dài</h3>
         <div class="row content_pants">
           <c:forEach items="${pants}" var="p">
             <div class="col l-3 card_category">
@@ -72,7 +72,7 @@
           <%--        <a href="#" id="content_quan">--%>
           <%--          <div class="row content_title">QUẦN:</div>--%>
           <%--        </a>--%>
-        <h3>Shirt</h3>
+        <h3>Áo Thun/Sơ Mi</h3>
         <div class="row content_pants">
           <c:forEach items="${shirt}" var="p">
             <div class="col l-3 card_category">
@@ -101,7 +101,7 @@
           <%--        <a href="#" id="content_quan">--%>
           <%--          <div class="row content_title">QUẦN:</div>--%>
           <%--        </a>--%>
-        <h3>Jacket</h3>
+        <h3>Áo Khoác</h3>
         <div class="row content_pants">
           <c:forEach items="${jacket}" var="p">
             <div class="col l-3 card_category">
@@ -130,7 +130,7 @@
           <%--        <a href="#" id="content_quan">--%>
           <%--          <div class="row content_title">QUẦN:</div>--%>
           <%--        </a>--%>
-        <h3>Bags</h3>
+        <h3>Balo</h3>
         <div class="row content_pants">
           <c:forEach items="${bags}" var="p">
             <div class="col l-3 card_category">
@@ -159,7 +159,7 @@
           <%--        <a href="#" id="content_quan">--%>
           <%--          <div class="row content_title">QUẦN:</div>--%>
           <%--        </a>--%>
-        <h3>Shorts</h3>
+        <h3>Quần Short</h3>
         <div class="row content_pants">
           <c:forEach items="${shorts}" var="p">
             <div class="col l-3 card_category">

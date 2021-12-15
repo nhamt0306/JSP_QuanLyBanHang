@@ -41,10 +41,12 @@
     </ul>
   </div>
   <div class="col l-3 header_right">
-    <div>
-      <input class="header_right_input-find" type="text" name="keyfind" placeholder="Nhập từ khóa" style="background-color: rgba(0,0,0,0.4); color: white; width: 164px">
-      <a href=""><i class="header_btn fas fa-search"></i></a>
-    </div>
+<%--    Tìm kiếm--%>
+    <form action="Product/Search" method="get">
+        <input class="header_right_input-find" type="text" name="keyfind" placeholder="Nhập từ khóa" style="background-color: rgba(0,0,0,0.4); color: white; width: 164px">
+        <button type="submit" style="background-color: rgba(0,0,0,0); border: none"><i class="header_btn fas fa-search"></i></button>
+    </form>
+<%--    --%>
     <c:set var="total" value="${0}"/>
     <c:forEach var="p" items="${order.items}">
       <c:set var="total" value="${total + p.quantity}" />
